@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ABBBEACF20026A38006E2D88 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBEACE20026A38006E2D88 /* main.swift */; };
 		ABBBEAD820026A88006E2D88 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBEAD720026A88006E2D88 /* Stack.swift */; };
+		ABBBEADA20026B89006E2D88 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBEAD920026B89006E2D88 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		ABBBEACB20026A37006E2D88 /* SwiftAlgorithmsStudent */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgorithmsStudent; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBBEACE20026A38006E2D88 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ABBBEAD720026A88006E2D88 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		ABBBEAD920026B89006E2D88 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		ABBBEAD620026A50006E2D88 /* Queue */ = {
 			isa = PBXGroup;
 			children = (
+				ABBBEAD920026B89006E2D88 /* Queue.swift */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABBBEAD820026A88006E2D88 /* Stack.swift in Sources */,
+				ABBBEADA20026B89006E2D88 /* Queue.swift in Sources */,
 				ABBBEACF20026A38006E2D88 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
