@@ -8,14 +8,16 @@
 
 import Foundation
 
-print("Hello, World!")
-
 let instace = AlgorithmsCode()
+print("\narray:\(instace.arrayList)")
 
-let res = instace.insertionSort(array: instace.arrayList)
-
-print("\n \(res)");
-
+//let res = instace.insertionSort(array: instace.arrayList)
+//var res = instace.binarySearch(a: instace.arrayList, key: 3)
+var res = instace.mergeSort(array: instace.arrayList)
+print("\n结果：\(res)")
+//if let index = res{
+//    print("\n结果：\(index)");
+//
 
 
 
