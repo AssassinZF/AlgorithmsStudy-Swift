@@ -10,3 +10,14 @@ import Foundation
 
 print("Hello, World!")
 
+let instace = AlgorithmsCode()
+
+let res = instace.insertionSort(array: instace.arrayList)
+
+print("\n \(res)");
+
+
+
+
+
+
