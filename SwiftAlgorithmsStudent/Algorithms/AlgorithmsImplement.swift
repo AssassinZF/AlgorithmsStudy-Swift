@@ -101,4 +101,14 @@ class AlgorithmsCode {
         return orderedPile
     }
     
+    func hanio(n:Int , from:String ,to:String , other:String) {
+        if n == 1 {
+            print(from + "->" + to)
+        }else{
+            hanio(n: n-1, from: from, to: other, other: to)
+            hanio(n: 1, from: from, to: to, other: other)
+            hanio(n: n-1, from: other, to: to, other: from)
+        }
+    }
+    
 }

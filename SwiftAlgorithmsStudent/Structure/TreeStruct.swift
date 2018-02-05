@@ -125,6 +125,15 @@ public class BinarySearchTree<T: Comparable> {
         right?.traversePostOrder(process: process)
         process(value)
     }
+    
+    //Depth and height
+    public func height() -> Int {
+        if isLeaf {
+            return 0
+        } else {
+            return 1 + max(left?.height() ?? 0, right?.height() ?? 0)
+        }
+    }
 }
 
 extension BinarySearchTree: CustomStringConvertible {

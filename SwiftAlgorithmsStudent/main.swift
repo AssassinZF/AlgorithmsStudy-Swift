@@ -13,11 +13,12 @@ print("\narray:\(instace.arrayList)")
 
 //let res = instace.insertionSort(array: instace.arrayList)
 //var res = instace.binarySearch(a: instace.arrayList, key: 3)
-var res = instace.mergeSort(array: instace.arrayList)
-print("\n结果：\(res)")
+//var res = instace.mergeSort(array: instace.arrayList)
+//print("\n结果：\(res)")
 //if let index = res{
 //    print("\n结果：\(index)");
-//
+
+instace.hanio(n: 3, from: "A", to: "C", other: "B")
 
 
 
