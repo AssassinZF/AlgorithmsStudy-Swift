@@ -17,8 +17,8 @@ print("\narray:\(instace.arrayList)")
 //print("\n结果：\(res)")
 //if let index = res{
 //    print("\n结果：\(index)");
-
-instace.hanio(n: 3, from: "A", to: "C", other: "B")
+//let count = instace.countOccurrencesOfKey(3, inArray: [2,3,3,6,8,8,8,8,9,10,123,133])
+//print(count)
 
 
 
