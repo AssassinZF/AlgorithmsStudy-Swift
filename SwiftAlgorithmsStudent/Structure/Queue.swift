@@ -31,6 +31,7 @@ public struct Queue<T> {
         array[head] = nil
         head += 1
         
+        //优化数组存储空间，剪掉已经出掉的元素在数组前端
         let percentage = Double(head)/Double(array.count)
         if array.count > 50 && percentage > 0.25 {
             array.removeFirst(head)

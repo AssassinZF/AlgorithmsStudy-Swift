@@ -8,13 +8,15 @@
 
 import Foundation
 
+//MARK: 基本算法
+
 class AlgorithmsCode {
     var arrayList = [3,4,9,12,45,0,4,8,1,10];
     
-    
+    //MARK: 插入排序
     /*
      * 插入排序
-     * 0(n2)
+     * 0(n^2)
      */
     func insertionSort(array: [Int]) -> [Int] {
         var a = array
@@ -30,8 +32,11 @@ class AlgorithmsCode {
         return a
     }
     
+    //MARK: 二分查找
     /*
-     二分查找
+     * 二分查找
+     * 要求：必须是排好序的数组
+     * O(nlgn):
      */
     func binarySearch<T: Comparable>(a: [T], key: T) -> Int? {
         var left = a.startIndex
@@ -49,8 +54,23 @@ class AlgorithmsCode {
         return nil
     }
     
+    func recursionBinarySearch<T:Comparable>(a:[T],key:T,rang:Range<Int>) -> Int? {
+        if rang.lowerBound > rang.upperBound {
+            return nil
+        }
+        let mind = rang.lowerBound + (rang.upperBound - rang.lowerBound)/2
+        if a[mind] < key {
+            return recursionBinarySearch(a: a, key: key, rang: mind + 1 ..< rang.upperBound)
+        }else if a[mind] > key{
+            return recursionBinarySearch(a: a, key: key, rang: 0 ..< mind)
+        }
+        return mind
+    }
+    
+    //MARK: 归并排序
     /*
-     归并排序
+     * 归并排序
+     * 0(nlgn)
      */
     func mergeSort(array: [Int]) -> [Int] {
         guard array.count > 1 else { return array }    // 1
@@ -63,6 +83,7 @@ class AlgorithmsCode {
         
         return merge(lp: leftArray, rightPile: rightArray)             // 5
     }
+    
     func merge(lp leftPile: [Int], rightPile: [Int]) -> [Int] {
         // 1
         var leftIndex = 0
@@ -100,52 +121,6 @@ class AlgorithmsCode {
         
         return orderedPile
     }
-    
-    
-//    
-//    func hanio(n:Int , from:String ,to:String , other:String) {
-//        if n == 1 {
-//            print(from + "->" + to)
-//        }else{
-//            hanio(n: n-1, from: from, to: other, other: to)
-//            hanio(n: 1, from: from, to: to, other: other)
-//            hanio(n: n-1, from: other, to: to, other: from)
-//        }
-//    }
-    
-    //改进的二分查找算法 计算一个排序好的数组中某一个元素出现的次数
-    func countOccurrencesOfKey(_ key: Int, inArray a: [Int]) -> Int {
-        func leftBoundary() -> Int {
-            var low = 0
-            var high = a.count
-            while low < high {
-                let midIndex = low + (high - low)/2
-                if a[midIndex] < key {
-                    low = midIndex + 1
-                } else {
-                    high = midIndex
-                }
-            }
-            return low
-        }
         
-        func rightBoundary() -> Int {
-            var low = 0
-            var high = a.count
-            while low < high {
-                let midIndex = low + (high - low)/2
-                if a[midIndex] > key {
-                    high = midIndex
-                } else {
-                    low = midIndex + 1
-                }
-            }
-            return low
-        }
-//        let low = leftBoundary()
-//        let right = rightBoundary()
-//        return right - low
-        return rightBoundary() - leftBoundary()
-    }
     
 }

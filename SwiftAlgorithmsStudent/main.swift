@@ -8,19 +8,12 @@
 
 import Foundation
 
-let instace = AlgorithmsCode()
-print("\narray:\(instace.arrayList)")
+var numbers = [9,3,4,1,9,0,2,2,5,6]
 
-//let res = instace.insertionSort(array: instace.arrayList)
-//var res = instace.binarySearch(a: instace.arrayList, key: 3)
-//var res = instace.mergeSort(array: instace.arrayList)
-//print("\n结果：\(res)")
-//if let index = res{
-//    print("\n结果：\(index)");
-//let count = instace.countOccurrencesOfKey(3, inArray: [2,3,3,6,8,8,8,8,9,10,123,133])
-//print(count)
-
-
-
-
+var algorithms = AlgorithmsCode()
+numbers.sort()
+let index = algorithms.recursionBinarySearch(a: numbers, key: 0, rang: 0 ..< numbers.count)
+if let re = index{
+    print("result: \(re)")
+}
 

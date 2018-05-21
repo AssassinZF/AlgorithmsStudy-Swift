@@ -126,7 +126,7 @@ public class BinarySearchTree<T: Comparable> {
         process(value)
     }
     
-    //Depth and height
+    //MARK:Depth and height
     public func height() -> Int {
         if isLeaf {
             return 0
