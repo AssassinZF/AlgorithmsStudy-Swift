@@ -11,9 +11,23 @@ import Foundation
 var numbers = [9,3,4,1,9,0,2,2,5,6]
 
 var algorithms = AlgorithmsCode()
-numbers.sort()
-let index = algorithms.recursionBinarySearch(a: numbers, key: 0, rang: 0 ..< numbers.count)
-if let re = index{
-    print("result: \(re)")
+
+var tree = BinarySearchTree(array: numbers)
+
+let s = tree.description
+print(s)
+print("_____________")
+
+//tree.traverseInOrder { (index) in
+//    print(index)
+//}
+//print("_____________")
+//tree.traversePreOrder { (index) in
+//    print(index)
+//}
+
+tree.traverseHierarchy { (value) in
+    print(value)
 }
+
 
