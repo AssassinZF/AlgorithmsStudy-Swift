@@ -8,12 +8,15 @@
 
 import Foundation
 
+//MARK: 基本算法
+
 class AlgorithmsCode {
     var arrayList = [3,4,9,12,45,0,4,8,1,10];
     
+    //MARK: 插入排序
     /*
      * 插入排序
-     * 0(n2)
+     * 0(n^2)
      */
     func insertionSort(array: [Int]) -> [Int] {
         var a = array
@@ -29,8 +32,11 @@ class AlgorithmsCode {
         return a
     }
     
+    //MARK: 二分查找
     /*
-     二分查找
+     * 二分查找
+     * 要求：必须是排好序的数组
+     * O(nlgn):
      */
     func binarySearch<T: Comparable>(a: [T], key: T) -> Int? {
         var left = a.startIndex
@@ -47,26 +53,23 @@ class AlgorithmsCode {
         }
         return nil
     }
-    
-    //循环方案
-    func binarySearchIterative<T: Comparable>(_ a: [T], key: T) -> Int? {
-        var lowerBound = 0
-        var upperBound = a.count
-        while lowerBound < upperBound {
-            let midIndex = lowerBound + (upperBound - lowerBound) / 2
-            if a[midIndex] == key {
-                return midIndex
-            } else if a[midIndex] < key {
-                lowerBound = midIndex + 1
-            } else {
-                upperBound = midIndex
-            }
+    func recursionBinarySearch<T:Comparable>(a:[T],key:T,rang:Range<Int>) -> Int? {
+        if rang.lowerBound > rang.upperBound {
+            return nil
         }
-        return nil
+        let mind = rang.lowerBound + (rang.upperBound - rang.lowerBound)/2
+        if a[mind] < key {
+            return recursionBinarySearch(a: a, key: key, rang: mind + 1 ..< rang.upperBound)
+        }else if a[mind] > key{
+            return recursionBinarySearch(a: a, key: key, rang: 0 ..< mind)
+        }
+        return mind
     }
     
+    //MARK: 归并排序
     /*
-     归并排序
+     * 归并排序
+     * 0(nlgn)
      */
     func mergeSort(array: [Int]) -> [Int] {
         guard array.count > 1 else { return array }    // 1
@@ -79,6 +82,7 @@ class AlgorithmsCode {
         
         return merge(lp: leftArray, rightPile: rightArray)             // 5
     }
+    
     func merge(lp leftPile: [Int], rightPile: [Int]) -> [Int] {
         // 1
         var leftIndex = 0
@@ -117,52 +121,31 @@ class AlgorithmsCode {
         return orderedPile
     }
     
-    
-//    
-//    func hanio(n:Int , from:String ,to:String , other:String) {
-//        if n == 1 {
-//            print(from + "->" + to)
-//        }else{
-//            hanio(n: n-1, from: from, to: other, other: to)
-//            hanio(n: 1, from: from, to: to, other: other)
-//            hanio(n: n-1, from: other, to: to, other: from)
-//        }
-//    }
-    
-    //改进的二分查找算法 计算一个排序好的数组中某一个元素出现的次数
-    func countOccurrencesOfKey(_ key: Int, inArray a: [Int]) -> Int {
-        func leftBoundary() -> Int {
-            var low = 0
-            var high = a.count
-            while low < high {
-                let midIndex = low + (high - low)/2
-                if a[midIndex] < key {
-                    low = midIndex + 1
-                } else {
-                    high = midIndex
-                }
-            }
-            return low
+    //MARK: 快速排序
+    func quicksortHoare<T: Comparable>(_ a: inout [T], low: Int, high: Int) {
+        if low < high {
+            let p = partitionHoare(&a, low: low, high: high)
+            quicksortHoare(&a, low: low, high: p)
+            quicksortHoare(&a, low: p + 1, high: high)
         }
-        
-        func rightBoundary() -> Int {
-            var low = 0
-            var high = a.count
-            while low < high {
-                let midIndex = low + (high - low)/2
-                if a[midIndex] > key {
-                    high = midIndex
-                } else {
-                    low = midIndex + 1
-                }
-            }
-            return low
-        }
-//        let low = leftBoundary()
-//        let right = rightBoundary()
-//        return right - low
-        return rightBoundary() - leftBoundary()
     }
+    func partitionHoare<T: Comparable>(_ a: inout [T], low: Int, high: Int) -> Int {
+        let pivot = a[low]
+        var i = low - 1
+        var j = high + 1
+        
+        while true {
+            repeat { j -= 1 } while a[j] > pivot
+            repeat { i += 1 } while a[i] < pivot
+            
+            if i < j {
+                a.swapAt(i, j)
+            } else {
+                return j
+            }
+        }
+    }
+        
     
     var testarray = [2,5,7,9,4,5,6,1,6,0];
 //    var tree = BinarySearchTree<Int>(array: testarray);

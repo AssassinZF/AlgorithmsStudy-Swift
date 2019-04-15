@@ -107,7 +107,7 @@ public class BinarySearchTree<T: Comparable> {
     }
     
     
-    //三种方式遍历
+    //四种方式遍历
     public func traverseInOrder(process: (T) -> Void) {
         left?.traverseInOrder(process: process)
         process(value)
@@ -126,7 +126,40 @@ public class BinarySearchTree<T: Comparable> {
         process(value)
     }
     
-    //Depth and height
+    public func traverseHierarchy(process:(T)->Void){
+        guard self.isRoot else {
+            print("遍历必须从root开始")
+            return
+        }
+        var paraentCount = 1
+        var childCount = 0
+        var queue = Queue<BinarySearchTree>()
+        queue.enqueue(self)
+        
+        repeat{
+            let temp:BinarySearchTree = queue.dequeue()!
+            print("\(temp.value)")
+            if temp.hasLeftChild{
+                queue.enqueue(temp.left!)
+                childCount += 1
+            }
+            
+            if temp.hasRightChild{
+                queue.enqueue(temp.right!)
+                childCount += 1
+            }
+            
+            paraentCount -= 1
+            if paraentCount == 0{
+                paraentCount = childCount
+                childCount = 0
+                print("\n")
+            }
+            
+        }while !queue.isEmpty
+    }
+    
+    //MARK:Depth and height
     public func height() -> Int {
         if isLeaf {
             return 0
