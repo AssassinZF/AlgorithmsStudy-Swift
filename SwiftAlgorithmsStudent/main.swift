@@ -21,6 +21,3 @@ print("\narray:\(instace.arrayList)")
 //print(count)
 
 
-
-
-

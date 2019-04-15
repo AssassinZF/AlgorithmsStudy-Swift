@@ -11,7 +11,6 @@ import Foundation
 class AlgorithmsCode {
     var arrayList = [3,4,9,12,45,0,4,8,1,10];
     
-    
     /*
      * 插入排序
      * 0(n2)
@@ -44,6 +43,23 @@ class AlgorithmsCode {
                 left = midIndex + 1
             } else {
                 right = midIndex
+            }
+        }
+        return nil
+    }
+    
+    //循环方案
+    func binarySearchIterative<T: Comparable>(_ a: [T], key: T) -> Int? {
+        var lowerBound = 0
+        var upperBound = a.count
+        while lowerBound < upperBound {
+            let midIndex = lowerBound + (upperBound - lowerBound) / 2
+            if a[midIndex] == key {
+                return midIndex
+            } else if a[midIndex] < key {
+                lowerBound = midIndex + 1
+            } else {
+                upperBound = midIndex
             }
         }
         return nil
@@ -147,5 +163,11 @@ class AlgorithmsCode {
 //        return right - low
         return rightBoundary() - leftBoundary()
     }
+    
+    var testarray = [2,5,7,9,4,5,6,1,6,0];
+//    var tree = BinarySearchTree<Int>(array: testarray);
+    
+    
+    
     
 }
