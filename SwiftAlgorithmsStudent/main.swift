@@ -14,23 +14,7 @@ var algorithms = AlgorithmsCode()
 
 var tree = BinarySearchTree(array: numbers)
 
-<<<<<<< HEAD
-=======
-let s = tree.description
-print(s)
-print("_____________")
 
-//tree.traverseInOrder { (index) in
-//    print(index)
-//}
-//print("_____________")
-//tree.traversePreOrder { (index) in
-//    print(index)
-//}
+let cou = countOccurrencesOfKey(2, inArray: numbers)
 
-tree.traverseHierarchy { (value) in
-    print(value)
-}
-
-
->>>>>>> 02923ec041fe29214395585fabe9fe49ca34fabb
+print("\(cou) \n")

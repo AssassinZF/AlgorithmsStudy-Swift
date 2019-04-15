@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*
+ * 排序二叉树 使用中序p遍历 即为有序数组
+ */
+
 public class BinarySearchTree<T: Comparable> {
     private(set) public var value: T
     private(set) public var parent: BinarySearchTree?

@@ -12,6 +12,7 @@
 		011FDA35202454240046E4E2 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FDA33202454240046E4E2 /* Stack.swift */; };
 		011FDA36202454240046E4E2 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FDA34202454240046E4E2 /* Queue.swift */; };
 		011FDA38202455400046E4E2 /* AlgorithmsImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FDA37202455400046E4E2 /* AlgorithmsImplement.swift */; };
+		01664B24226460E000111DA2 /* CountNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01664B23226460E000111DA2 /* CountNumber.swift */; };
 		017EA83220B29F1900789A78 /* LeetCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017EA83120B29F1900789A78 /* LeetCode.swift */; };
 		ABBBEACF20026A38006E2D88 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBEACE20026A38006E2D88 /* main.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		011FDA33202454240046E4E2 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		011FDA34202454240046E4E2 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		011FDA37202455400046E4E2 /* AlgorithmsImplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsImplement.swift; sourceTree = "<group>"; };
+		01664B23226460E000111DA2 /* CountNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountNumber.swift; sourceTree = "<group>"; };
 		017EA83120B29F1900789A78 /* LeetCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode.swift; sourceTree = "<group>"; };
 		ABBBEACB20026A37006E2D88 /* SwiftAlgorithmsStudent */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgorithmsStudent; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBBEACE20026A38006E2D88 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		011FDA31202454240046E4E2 /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
+				01664B23226460E000111DA2 /* CountNumber.swift */,
 				011FDA37202455400046E4E2 /* AlgorithmsImplement.swift */,
 				017EA83120B29F1900789A78 /* LeetCode.swift */,
 			);
@@ -160,6 +163,7 @@
 				010373812027E76500074055 /* Linked.swift in Sources */,
 				011FDA36202454240046E4E2 /* Queue.swift in Sources */,
 				017EA83220B29F1900789A78 /* LeetCode.swift in Sources */,
+				01664B24226460E000111DA2 /* CountNumber.swift in Sources */,
 				ABBBEACF20026A38006E2D88 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

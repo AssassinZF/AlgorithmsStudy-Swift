@@ -83,7 +83,7 @@ class AlgorithmsCode {
         return merge(lp: leftArray, rightPile: rightArray)             // 5
     }
     
-    func merge(lp leftPile: [Int], rightPile: [Int]) -> [Int] {
+    func merge(lp leftPile: [ Int], rightPile: [Int]) -> [Int] {
         // 1
         var leftIndex = 0
         var rightIndex = 0
@@ -145,11 +145,6 @@ class AlgorithmsCode {
             }
         }
     }
-        
-    
-    var testarray = [2,5,7,9,4,5,6,1,6,0];
-//    var tree = BinarySearchTree<Int>(array: testarray);
-    
     
     
     
